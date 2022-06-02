@@ -1,2 +1,3 @@
 # VORON-2.4-250
-My VORON 2.4 250 Config
+
+My Voron 2.4 250 uses Klicky, Purge Bucket, ADXL, Nevermore, SB-LEDs, Chamber-LEDs and this is my config...
