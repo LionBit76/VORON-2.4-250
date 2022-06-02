@@ -1,0 +1,41 @@
+
+Diese Einträge ergänzen die leeren Felder in Mainsail/G-Code Dateien. 
+Nach dem Slicen wird ein zum Materialtyp passendes PRINT_START Macro
+ausgeführt. Z.B. PRINT_START_ABS
+
+
+
+---------------------------------------------------------------------------------------------------------------
+Einträge in CURA /  Erweiterungen / Nachbearbeitung / G-Code ändern:
+---------------------------------------------------------------------------------------------------------------
+ Search and Replace - Search :      ;Filament weight = .[
+ Search and Replace - Replace :     ;Filament weight = .
+ 
+ Search and Replace - Search :      ].del
+ Search and Replace - Replace :     .
+ 
+ Search and Replace - Search :      ;Filament type = .[
+ Search and Replace - Replace :     ;Filament type = .
+ 
+ Search and Replace - Search :      ;Filament name = .[
+ Search and Replace - Replace :     ;Filament name = .
+ 
+ Insert at layer change - Before :  TIMELAPSE_TAKE_FRAME
+
+
+--------------------------------------------------------------------------------------------------------------- 
+ Eintrag in CURA Start G-Code:
+ ---------------------------------------------------------------------------------------------------------------
+PRINT_START_{material_type}
+;Filament weight = .{filament_weight}.del
+;Filament type = {material_type}
+;Filament name = {material_name}
+;Nozzle diameter = {machine_nozzle_size}
+;M109 S{material_print_temperature_layer_0}
+;M190 S{material_bed_temperature_layer_0}
+
+
+---------------------------------------------------------------------------------------------------------------
+Eintrag in CURA Ende G-Code:
+---------------------------------------------------------------------------------------------------------------
+PRINT_END
